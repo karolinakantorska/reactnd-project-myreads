@@ -15,12 +15,12 @@ class Book extends React.Component {
           <div className="book-top">
             <div className="book-cover" style={{ width: 128, height: 192, backgroundImage: `url(${cover})` }}></div>
             <div className="book-shelf-changer" >
-              <select>
+              <select defaultValue={shelf || "none"} onChange={this.handleShelfChange}>
                 <option value="move" disabled>Move to...</option>
-                <option value="currentlyReading" onClick = {this.handleShelfChange} >Currently Reading</option>
-                <option value="wantToRead" onClick = {this.handleShelfChange}>Want to Read</option>
-                <option value="read" onClick = {this.handleShelfChange}>Read</option>
-                <option value="none" onClick = {this.handleShelfChange}>None</option>
+                <option value="currentlyReading"  >Currently Reading</option>
+                <option value="wantToRead" >Want to Read</option>
+                <option value="read" >Read</option>
+                <option value="none" >None</option>
               </select>
             </div>
           </div>
@@ -33,3 +33,4 @@ class Book extends React.Component {
 }
 
 export default Book
+/*onClick = {this.handleShelfChange}*/

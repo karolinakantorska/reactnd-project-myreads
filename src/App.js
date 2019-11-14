@@ -20,7 +20,7 @@ class BooksApp extends React.Component {
 
   onShelfChange= (shelf,bookID ) =>{
     const book= {id:bookID};
-    
+
     BooksAPI.update(book, shelf).then(() => {
       BooksAPI.getAll().then((books) => {this.setState(() => ({
         books
@@ -31,7 +31,8 @@ class BooksApp extends React.Component {
 
   render() {
     const {loading, books}= this.state;
-      if (loading){
+    
+    if (loading){
       return (
         <div>
         <p>Please Wait</p>
@@ -50,7 +51,7 @@ class BooksApp extends React.Component {
         <Main books = {books} onShelfChange= { this.onShelfChange } />
       </Route>
       <Route path= '/search' >
-        <Search onShelfChange= { this.onShelfChange }/>
+        <Search booksMainPage = {books} onShelfChange= { this.onShelfChange }/>
       </Route>
 
     </div>
