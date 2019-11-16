@@ -8,7 +8,7 @@ class Book extends React.Component {
   }
 
   render(){
-  const { cover,title, author, shelf, onShelfChange } = this.props;
+  const { cover,title, author, shelf } = this.props;
 
     return (
         <div className="book">
@@ -26,7 +26,6 @@ class Book extends React.Component {
           </div>
           <div className="book-title">{title}</div>
           <div className="book-authors">{author}</div>
-          <div className="book-authors">{shelf}</div>
         </div>
     )
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import * as BooksAPI from './BooksAPI';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Main from './Main.js';
 import Search from './Search';
@@ -47,13 +47,14 @@ class BooksApp extends React.Component {
           <h1>MyReads</h1>
         </div>
       </div>
-      <Route exact path= '/' >
-        <Main books = {books} onShelfChange= { this.onShelfChange } />
-      </Route>
-      <Route path= '/search' >
-        <Search booksMainPage = {books} onShelfChange= { this.onShelfChange }/>
-      </Route>
-
+      <Switch>
+        <Route exact path= '/' >
+          <Main books = {books} onShelfChange= { this.onShelfChange } />
+        </Route>
+        <Route path= '/search' >
+          <Search booksMainPage = {books} onShelfChange= { this.onShelfChange }/>
+        </Route>
+      </Switch>
     </div>
   )
   } // render
